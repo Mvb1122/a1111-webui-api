@@ -8,6 +8,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://www.github.com/EternalC0der/sd-api)
 
 A Typescript API client for [AUTOMATIC111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) API that is actively maintained.
+### pull requests are welcome!
 
 - [Installation](#installation)
 - [Usage](#usage)
