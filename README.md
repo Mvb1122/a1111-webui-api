@@ -8,6 +8,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://www.github.com/EternalC0der/a1111-webui-api)
 
 A Typescript API client for [AUTOMATIC111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) API that is actively maintained.
+
 ### pull requests are welcome!
 
 - [Installation](#installation)
@@ -48,15 +49,15 @@ import StableDiffusionApi from "a1111-webui-api";
 const api = new StableDiffusionApi();
 
 const api = new StableDiffusionApi({
-  host: "localhost",
-  port: 7860,
-  protocol: "http",
-  defaultSampler: "Euler a",
-  defaultStepCount: 20,
+	host: "localhost",
+	port: 7860,
+	protocol: "http",
+	defaultSampler: "Euler a",
+	defaultStepCount: 20,
 });
 
 const api = new StableDiffusionApi({
-  baseUrl: "http://localhost:7860",
+	baseUrl: "http://localhost:7860",
 });
 ```
 
@@ -79,10 +80,6 @@ const result = await api.txt2img({
 result.image.toFile('result.png')
 ```
 
-| Result
-|:-------------------------:
-| ![](assets/img/robot_workplace.png)
-
 ### img2img
 
 ```typescript
@@ -96,10 +93,6 @@ const result = await api.img2img({
 
 result.image.toFile('result.png')
 ```
-
-|               Input               |             Result             |
-| :-------------------------------: | :----------------------------: |
-| ![](assets/img/running_track.png) | ![](assets/img/lava_floor.png) |
 
 ---
 
@@ -129,18 +122,17 @@ To get a list of all installed ControlNet models, you can use the `api.ControlNe
 const image = sharp("image.png");
 
 const controlNetUnit = new ControlNetUnit({
-  model: "control_sd15_depth [fef5e48e]",
-  module: "depth",
-  input_images: [image],
-  processor_res: 512,
-  threshold_a: 64,
-  threshold_b: 64,
+	model: "control_sd15_depth [fef5e48e]",
+	module: "depth",
+	input_images: [image],
+	processor_res: 512,
+	threshold_a: 64,
+	threshold_b: 64,
 });
 
 const result = await api.txt2img({
-  prompt:
-    "Young lad laughing at all artists putting hard work and effort into their work.",
-  controlnet_units: [controlNetUnit],
+	prompt: "Young lad laughing at all artists putting hard work and effort into their work.",
+	controlnet_units: [controlNetUnit],
 });
 
 result.image.toFile("result.png");
@@ -150,10 +142,6 @@ result.image.toFile("result.png");
 const depth = result.images[1];
 depth.toFile("depth.png");
 ```
-
-|                Input                 |                 Result                 |                   Depth                   |
-| :----------------------------------: | :------------------------------------: | :---------------------------------------: |
-| ![](assets/img/grandpa_laughing.png) | ![](assets/img/young_lad_laughing.png) | ![](assets/img/grandpa_lauging_depth.png) |
 
 ### detect
 
@@ -165,16 +153,12 @@ This comes in handy when you just want a detection result without generating a w
 const image = sharp("image.png");
 
 const result = await api.ControlNet.detect({
-  controlnet_module: "depth",
-  controlnet_input_images: [image],
-  controlnet_processor_res: 512,
-  controlnet_threshold_a: 64,
-  controlnet_threshold_b: 64,
+	controlnet_module: "depth",
+	controlnet_input_images: [image],
+	controlnet_processor_res: 512,
+	controlnet_threshold_a: 64,
+	controlnet_threshold_b: 64,
 });
 
 result.image.toFile("result.png");
 ```
-
-|            Input             |               Result               |
-| :--------------------------: | :--------------------------------: |
-| ![](assets/img/food_man.png) | ![](assets/img/food_man_depth.png) |
