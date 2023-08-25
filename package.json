@@ -1,0 +1,38 @@
+{
+	"name": "a1111-webui-api",
+	"version": "1.0.0",
+	"description": "typescript client for Automatic1111 Stable Diffusion WebUI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+	"repository": "https://github.com/EternalC0der/a1111-webui-api.git",
+	"author": "EternalC0der <50495805+EternalC0der@users.noreply.github.com>",
+	"license": "MIT",
+	"keywords": [
+    "stable-diffusion-webui",
+		"stable-diffusion",
+		"stable diffusion",
+		"automatic1111",
+		"api",
+		"client",
+		"typescript"
+	],
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"@types/axios": "^0.14.0",
+		"@types/deasync": "^0.1.2",
+		"@types/node": "^20.5.6",
+		"@types/sharp": "^0.31.1",
+		"@types/string-similarity": "^4.0.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.2.2"
+	},
+	"dependencies": {
+		"sharp": "^0.32.5",
+		"string-similarity": "^4.0.4"
+	}
+}
