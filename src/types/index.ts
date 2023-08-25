@@ -23,7 +23,6 @@ export type SamplerName =
 	| "DDIM"
 	| "PLMS"
 	| "UniPC"
-	| string;
 
 export type StableDiffusionApiConfig = {
 	host?: string;

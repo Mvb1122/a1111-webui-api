@@ -25,34 +25,34 @@ import sharp from "sharp";
  * })
  */
 export default class StableDiffusionResult {
-  images: sharp.Sharp[] = [];
-  info: any;
-  parameters: any;
+	images: sharp.Sharp[] = [];
+	info: any;
+	parameters: any;
 
-  constructor(public response: StableDiffusionApiRawResponse) {
-    if (response.data.image && typeof response.data.image === "string") {
-      this.addImage(response.data.image);
-    }
+	constructor(public response: StableDiffusionApiRawResponse) {
+		if (response.data.image && typeof response.data.image === "string") {
+			this.addImage(response.data.image);
+		}
 
-    if (response.data.images && Array.isArray(response.data.images)) {
-      response.data.images.forEach(this.addImage);
-    }
+		if (response.data.images && Array.isArray(response.data.images)) {
+			response.data.images.forEach(this.addImage);
+		}
 
-    this.info = response.data.info || response.data.html_info || {};
-    this.parameters = response.data.parameters || {};
-  }
+		this.info = response.data.info || response.data.html_info || {};
+		this.parameters = response.data.parameters || {};
+	}
 
-  private addImage = (image: string) => {
-    const imageBuffer = Buffer.from(image, "base64");
-    const sharpImage = sharp(imageBuffer);
-    this.images.push(sharpImage);
-  };
+	private addImage = (image: string) => {
+		const imageBuffer = Buffer.from(image, "base64");
+		const sharpImage = sharp(imageBuffer);
+		this.images.push(sharpImage);
+	};
 
-  /**
-   * First sharp image from the result list, or undefined if no images
-   * @returns {sharp.Sharp} First sharp image from the result list
-   */
-  public get image(): sharp.Sharp {
-    return this.images[0];
-  }
+	/**
+	 * First sharp image from the result list, or undefined if no images
+	 * @returns {sharp.Sharp} First sharp image from the result list
+	 */
+	public get image(): sharp.Sharp {
+		return this.images[0];
+	}
 }
