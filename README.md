@@ -2,10 +2,10 @@
 
 ![npm](https://img.shields.io/npm/v/a1111-webui-api)
 ![npm](https://img.shields.io/npm/dw/a1111-webui-api)
-![GitHub](https://img.shields.io/github/license/EternalC0der/sd-api)
+![GitHub](https://img.shields.io/github/license/EternalC0der/a1111-webui-api)
 
 [![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/a1111-webui-api)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://www.github.com/EternalC0der/sd-api)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://www.github.com/EternalC0der/a1111-webui-api)
 
 A Typescript API client for [AUTOMATIC111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) API that is actively maintained.
 ### pull requests are welcome!
