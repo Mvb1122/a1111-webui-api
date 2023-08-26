@@ -1,7 +1,7 @@
 {
 	"name": "a1111-webui-api",
-	"version": "1.0.0-RC2",
-	"description": "typescript client for Automatic1111 Stable Diffusion WebUI",
+	"version": "1.0.0",
+	"description": "Typescript client for Automatic1111 Stable Diffusion WebUI",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
@@ -20,7 +20,8 @@
 		"typescript"
 	],
 	"scripts": {
-		"build": "tsc"
+		"build": "tsc",
+        "prepare": "yarn build"
 	},
 	"devDependencies": {
 		"@types/axios": "^0.14.0",
