@@ -1,6 +1,6 @@
 {
 	"name": "a1111-webui-api",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "Typescript client for Automatic1111 Stable Diffusion WebUI",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",

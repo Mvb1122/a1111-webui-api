@@ -123,8 +123,8 @@ export type Txt2ImgOptions = {
 	s_noise?: number;
 	override_settings?: Record<string, unknown>;
 	override_settings_restore_afterwards?: boolean;
-	refiner_checkpoint: string;
-	refiner_switch_at: number;
+	refiner_checkpoint?: string;
+	refiner_switch_at?: number;
 	script_args?: unknown[];
 	script_name?: string;
 	send_images?: boolean;
@@ -175,8 +175,8 @@ export type Img2ImgOptions = {
 	s_noise?: number;
 	override_settings?: {};
 	override_settings_restore_afterwards?: boolean;
-	refiner_checkpoint: string;
-	refiner_switch_at: number;
+	refiner_checkpoint?: string;
+	refiner_switch_at?: number;
 	script_args?: [];
 	include_init_images?: boolean;
 	script_name?: string;
