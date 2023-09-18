@@ -1,6 +1,6 @@
 {
 	"name": "a1111-webui-api",
-	"version": "1.0.0",
+	"version": "1.6.0",
 	"description": "Typescript client for Automatic1111 Stable Diffusion WebUI",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -26,14 +26,14 @@
 	"devDependencies": {
 		"@types/axios": "^0.14.0",
 		"@types/deasync": "^0.1.2",
-		"@types/node": "^20.5.6",
+		"@types/node": "^20.6.2",
 		"@types/sharp": "^0.31.1",
 		"@types/string-similarity": "^4.0.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.2.2"
 	},
 	"dependencies": {
-		"axios": "^1.4.0",
+		"axios": "^1.5.0",
 		"sharp": "^0.32.5",
 		"string-similarity": "^4.0.4"
 	}
