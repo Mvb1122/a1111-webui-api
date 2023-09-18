@@ -21,7 +21,7 @@
 	],
 	"scripts": {
 		"build": "tsc",
-        "prepare": "yarn build"
+		"prepare": "yarn build"
 	},
 	"devDependencies": {
 		"@types/axios": "^0.14.0",

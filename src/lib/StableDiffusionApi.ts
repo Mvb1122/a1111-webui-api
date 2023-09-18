@@ -60,12 +60,12 @@ export class StableDiffusionApi {
 
 	public constructor({
 		host = "127.0.0.1",
-		port = 7860,
+		port = 7861,
 		protocol = "http",
-		timeout = 30000,
+		timeout = 1000 * 60 * 10, // 10 minutes
 		baseUrl = null,
 		defaultSampler = "Euler a",
-		defaultStepCount = 20,
+		defaultStepCount = 25,
 	}: StableDiffusionApiConfig | undefined = {}) {
 		const baseURL = baseUrl || `${protocol}://${host}${port ? `:${port}` : ""}`;
 
@@ -124,6 +124,10 @@ export class StableDiffusionApi {
 			hr_second_pass_steps: options.hr_second_pass_steps ?? 0,
 			hr_resize_x: options.hr_resize_x ?? 0,
 			hr_resize_y: options.hr_resize_y ?? 0,
+			hr_checkpoint_name: options.hr_checkpoint_name ?? null,
+			hr_sampler_name: options.hr_sampler_name ?? null,
+			hr_prompt: options.hr_prompt ?? null,
+			hr_negative_prompt: options.hr_negative_prompt ?? null,
 			denoising_strength: options.denoising_strength ?? 0.7,
 			firstphase_width: options.firstphase_width ?? 0,
 			firstphase_height: options.firstphase_height ?? 0,
@@ -152,6 +156,8 @@ export class StableDiffusionApi {
 			s_noise: options.s_noise ?? 1,
 			override_settings: options.override_settings ?? {},
 			override_settings_restore_afterwards: options.override_settings_restore_afterwards ?? true,
+			refiner_checkpoint: options.refiner_checkpoint ?? null,
+			refiner_switch_at: options.refiner_switch_at ?? 0,
 			script_args: options.script_args ?? [],
 			script_name: options.script_name ?? null,
 			send_images: options.send_images ?? true,
@@ -190,6 +196,8 @@ export class StableDiffusionApi {
 			denoising_strength: options.denoising_strength ?? 0.75,
 			image_cfg_scale: options.image_cfg_scale ?? 1.5,
 			mask,
+			mask_blur_x: options.mask_blur_x ?? 4,
+			mask_blur_y: options.mask_blur_y ?? 4,
 			mask_blur: options.mask_blur ?? 4,
 			inpainting_fill: options.inpainting_fill ?? 0,
 			inpaint_full_res: options.inpaint_full_res ?? true,
@@ -222,6 +230,8 @@ export class StableDiffusionApi {
 			s_noise: options.s_noise ?? 1,
 			override_settings: options.override_settings ?? {},
 			override_settings_restore_afterwards: options.override_settings_restore_afterwards ?? true,
+			refiner_checkpoint: options.refiner_checkpoint ?? null,
+			refiner_switch_at: options.refiner_switch_at ?? 0,
 			script_args: options.script_args ?? [],
 			include_init_images: options.include_init_images ?? false,
 			script_name: options.script_name ?? null,

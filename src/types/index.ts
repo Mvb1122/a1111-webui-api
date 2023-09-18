@@ -3,6 +3,10 @@ import { ControlNetUnit } from "../lib/ControlNetUnit";
 import { type Sharp } from "sharp";
 
 export type SamplerName =
+	| "DPM++ 2M Karras"
+	| "DPM++ SDE Karras"
+	| "DPM++ 2M SDE Exponential"
+	| "DPM++ 2M SDE Karras"
 	| "Euler a"
 	| "Euler"
 	| "LMS"
@@ -12,17 +16,23 @@ export type SamplerName =
 	| "DPM++ 2S a"
 	| "DPM++ 2M"
 	| "DPM++ SDE"
+	| "DPM++ 2M SDE"
+	| "DPM++ 2M SDE Heun"
+	| "DPM++ 2M SDE Heun Karras"
+	| "DPM++ 2M SDE Heun Exponential"
+	| "DPM++ 3M SDE"
+	| "DPM++ 3M SDE Karras"
+	| "DPM++ 3M SDE Exponential"
 	| "DPM fast"
 	| "DPM adaptive"
 	| "LMS Karras"
 	| "DPM2 Karras"
 	| "DPM2 a Karras"
 	| "DPM++ 2S a Karras"
-	| "DPM++ 2M Karras"
-	| "DPM++ SDE Karras"
+	| "Restart"
 	| "DDIM"
 	| "PLMS"
-	| "UniPC"
+	| "UniPC";
 
 export type StableDiffusionApiConfig = {
 	host?: string;
@@ -81,6 +91,10 @@ export type Txt2ImgOptions = {
 	hr_second_pass_steps?: number;
 	hr_resize_x?: number;
 	hr_resize_y?: number;
+	hr_checkpoint_name?: string;
+	hr_sampler_name?: string;
+	hr_prompt?: string;
+	hr_negative_prompt?: string;
 	denoising_strength?: number;
 	firstphase_width?: number;
 	firstphase_height?: number;
@@ -109,6 +123,8 @@ export type Txt2ImgOptions = {
 	s_noise?: number;
 	override_settings?: Record<string, unknown>;
 	override_settings_restore_afterwards?: boolean;
+	refiner_checkpoint: string;
+	refiner_switch_at: number;
 	script_args?: unknown[];
 	script_name?: string;
 	send_images?: boolean;
@@ -125,6 +141,8 @@ export type Img2ImgOptions = {
 	denoising_strength?: number;
 	image_cfg_scale?: number;
 	mask_image?: any;
+	mask_blur_x?: number;
+	mask_blur_y?: number;
 	mask_blur?: number;
 	inpainting_fill?: number;
 	inpaint_full_res?: number;
@@ -157,6 +175,8 @@ export type Img2ImgOptions = {
 	s_noise?: number;
 	override_settings?: {};
 	override_settings_restore_afterwards?: boolean;
+	refiner_checkpoint: string;
+	refiner_switch_at: number;
 	script_args?: [];
 	include_init_images?: boolean;
 	script_name?: string;
